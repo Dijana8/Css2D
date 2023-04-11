@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Circle</title>
+
+    <style>
+        body {
+            background-color: #050210;
+        }
+
+        .circle-1 {
+            animation: my-animation 5s linear infinite;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translate(0);
+            transform-style: preserve-3d;
+        }
+
+        .circle-2 {
+            border-radius: 50%;
+            background-color: #050210;
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-3 {
+            animation: my-circle 1s linear infinite;
+            border-radius: 50%;
+            background-color: #050210;
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: brightness(220%);
+        }
+
+        .circle-1::before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(200deg, #fb5dad 0%, #55fb9f 50%, #b97aff 100%);
+            filter: blur(50px);
+            opacity: var(0.7);
+            transition: opacity 0.3s;
+            border-radius: inherit;
+            transform: translate3d(0, 0, -1px);
+        }
+
+        @keyframes my-animation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes my-circle {
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+
+            20% {
+                width: 75px;
+                height: 75px;
+            }
+
+            45% {
+                width: 150px;
+                height: 150px;
+            }
+
+            70% {
+                width: 250px;
+                height: 250px;
+            }
+
+            100% {
+                width: 350px;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="circle-container">
+        <div class="circle-1">
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
